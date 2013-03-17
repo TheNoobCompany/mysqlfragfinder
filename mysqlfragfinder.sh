@@ -121,7 +121,7 @@ for i in ${databases[@]}; do
 				echo -ne "\tOptimizing $table ... ";
 				"${mysqlCmd}" -u"$mysqlUser" -p"$mysqlPass" -h"$mysqlHost" -D "$i" --skip-column-names --batch -e "optimize table \`$table\`" 2>"$log" >/dev/null
 				if [[ $? -gt 0 ]]; then
-					echo "An error occured, check $log for more information."
+					echo "An error occured, check $log for more information. :("
 					exit 1;
 				fi
 				echo done
